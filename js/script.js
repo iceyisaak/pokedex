@@ -33,8 +33,7 @@ let pokemonList = [
 ];
 
 // Task 1.3
-// Create a List
-document.write('<ul>');
+
 
 // Looping through the pokemonList
 for (i = 0; i < pokemonList.length; i++) {
@@ -57,6 +56,4 @@ for (i = 0; i < pokemonList.length; i++) {
  `);
 }
 
-// End of the List
-document.write('</ul>');
 
