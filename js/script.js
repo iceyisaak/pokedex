@@ -1,59 +1,93 @@
-// Task 1.2
-// List out all pokemon
-let pokemonList = [
- {
-  name: 'Bulbasaur',
-  height: 0.7,
-  types: [
-   'grass',
-   'poison'
-  ]
- },
- {
-  name: 'Squirtle',
-  height: 0.5,
-  types: [
-   'water'
-  ]
- },
- {
-  name: 'Pikachu',
-  height: 0.4,
-  types: [
-   'electric'
-  ]
- },
- {
-  name: 'Kangaskhan',
-  height: 2.2,
-  types: [
-   'normal'
-  ]
+
+// 
+let pokemonRepository = (() => {
+
+ // List out all pokemon
+ let pokemonList = [
+  {
+   name: 'Bulbasaur',
+   height: 0.7,
+   types: [
+    'grass',
+    'poison'
+   ]
+  },
+  {
+   name: 'Squirtle',
+   height: 0.5,
+   types: [
+    'water'
+   ]
+  },
+  {
+   name: 'Pikachu',
+   height: 0.4,
+   types: [
+    'electric'
+   ]
+  },
+  {
+   name: 'Kangaskhan',
+   height: 2.2,
+   types: [
+    'normal'
+   ]
+  }
+ ];
+
+ // Why is this not working?
+ function addv(item) {
+  if (typeof item !== Object) {
+   // Stop program execution
+   return;
+  }
  }
-];
 
-// Task 1.3
+ // Get all pokemons in the list
+ function getAll() {
+  return pokemonList;
+ }
+
+ // Add new a pokemon
+ function add(item) {
+
+  // Validate data type
+  addv(item);
+  // return the list with a newly added pokemon
+  return pokemonList.push(item);
+ }
 
 
-// Looping through the pokemonList
-for (i = 0; i < pokemonList.length; i++) {
+
+ return {
+  getAll: getAll,
+  add: add
+ };
+
+})();
+
+
+
+// pokemonList.forEach() 
+pokemonRepository.getAll().forEach((pokemon, index) => {
 
  // pokemon with height > 1?
- pokemonList[i].height > 1 ?
-
-  // Display the list with label next to the list
+ pokemon.height > 1 ?
+  // Display the list with label 
+  document.write(`
+   <li class="list mb-3">
+    ${index + 1}. ${pokemon.name} (height: ${pokemon.height}) - Wow, that's big!
+   </li> 
+`)
+  :
+  // Else, display just the list
   document.write(`
   <li class="list mb-3">
-  ${i + 1}. ${pokemonList[i].name} (height: ${pokemonList[i].height}) - Wow, that's big!
+   ${index + 1}.  ${pokemon.name} (height: ${pokemon.height})
   </li> 
-  `)
-  :
-  // Else, just display the list
-  document.write(`
- <li class="list mb-3">
- ${i + 1}.  ${pokemonList[i].name} (height: ${pokemonList[i].height})
- </li> 
- `);
-}
+  `);
+});
+
+
 
 
