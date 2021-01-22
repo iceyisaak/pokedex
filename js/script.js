@@ -64,6 +64,9 @@ let pokemonRepository = (() => {
     let listItem = document.createElement('li');
     let button = document.createElement('button');
 
+    // Display button with data from list
+    button.innerText = `${index + 1}. ${pokemon.name} (${pokemon.height}m)`;
+
     // Apply the styling
     button.classList.add('button', 'list', 'mb-3');
 
