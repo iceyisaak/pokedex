@@ -1,5 +1,4 @@
 
-// 
 let pokemonRepository = (() => {
 
   // List out all pokemon
@@ -64,16 +63,6 @@ let pokemonRepository = (() => {
     let list = document.querySelector('ul');
     let listItem = document.createElement('li');
     let button = document.createElement('button');
-
-    // Display text, if pokemon with height > 1
-    button.innerText = pokemon.height > 1.0 ?
-
-      //   // Display the list with label 
-      `${index + 1}. ${pokemon.name} (${pokemon.height}m) - Wow that's big!`
-      :
-      //   // Display the list with NO label 
-      `${index + 1}. ${pokemon.name} (${pokemon.height}m)`;
-
 
     // Apply the styling
     button.classList.add('button', 'list', 'mb-3');
