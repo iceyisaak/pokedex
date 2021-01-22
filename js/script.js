@@ -63,7 +63,6 @@ let pokemonRepository = (() => {
     // Validate data type
     addv(item);
 
-    // item === true
     // return the list with a newly added pokemon
     return pokemonList.push(item);
   }
