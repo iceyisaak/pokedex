@@ -5,7 +5,8 @@ let pokemonRepository = (() => {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-  // Testing Data
+
+  // Testing Data Object
   // let pokemonList = [
   //   {
   //     name: 'Bulbasaur',
@@ -38,17 +39,6 @@ let pokemonRepository = (() => {
   //   }
   // ];
 
-  // Why is this not working?
-  function addv(item) {
-    // If item is NOT object
-    if (typeof item !== 'object') {
-      // Stop program execution
-      console.log('Invalid Input');
-      return item = false;
-    }
-  }
-
-
 
   // Get all pokemons in the list
   function getAll() {
@@ -56,16 +46,25 @@ let pokemonRepository = (() => {
   }
 
 
+  function add(pokemon) {
+    if (typeof (pokemon) === 'object') {
+      pokemonList.push(pokemon);
+    }
+    else { console.log('Invalid input'); }
+  }
 
   // Add new a pokemon
   function add(item) {
 
     // Validate data type
-    addv(item);
-
-    // return the list with a newly added pokemon
-    return pokemonList.push(item);
+    if (typeof (item) === 'object') {
+      pokemonList.push(item);
+    }
+    else {
+      console.log('Invalid input');
+    }
   }
+
 
 
 
@@ -76,8 +75,9 @@ let pokemonRepository = (() => {
     let listItem = document.createElement('li');
     let button = document.createElement('button');
 
+
     // Display button with data from list
-    button.innerText = `${index + 1}. ${pokemon.name} (${pokemon.detailsUrl.height} m)`;
+    button.innerText = `${index + 1}. ${pokemon.name}`;
 
     // Apply the styling
     button.classList.add('button', 'list', 'mb-3');
