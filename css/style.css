@@ -9,25 +9,28 @@ html {
 }
 
 body {
-  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;800&family=Kodchasan:wght@600;700&display=swap');
-  font-family: 'Kanit', sans-serif;
-  font-family: 'Kodchasan', sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 
 .main {
   max-width: 100vw;
+  min-height: 100vh;
 }
 
 .header {
-  background: #eeea1d;
-  padding: 5rem 3rem;
+  background: #efeb30;
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0.45rem #8a8a8a41;
 }
 
 .heading__primary--main {
   /* text-align: center; */
   font-size: 4.6rem;
-  font-weight: 700;
-  font-family: 'Kodchasan', sans-serif;
+  font-weight: 500;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  text-transform: capitalize;
 }
 
 .heading__secondary {
@@ -39,12 +42,13 @@ body {
   display: block;
   margin: 1.5rem auto;
   font-size: 1.6rem;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Mulish', sans-serif;
   padding: 2rem 1.5rem;
-  width: 95%;
+  width: 45%;
   border: none;
   text-align: left;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .pokemon-list {
@@ -55,6 +59,14 @@ body {
   margin-bottom: 0.3rem;
 }
 
+.mb-12 {
+  margin-bottom: 12rem;
+}
+
+.mt-12 {
+  margin-top: 12rem;
+}
+
 #modal-container {
   display: none;
 }
@@ -62,7 +74,6 @@ body {
 #modal-container.is-visible {
   position: fixed;
   padding: 20px;
-  box-sizing: border-box;
   top: 0;
   left: 0;
   width: 100%;
@@ -83,7 +94,6 @@ body {
 .modal {
   margin: auto;
   display: inline-block;
-  box-sizing: border-box;
   background: #fff;
   padding: 15px;
   width: 50%;
@@ -100,18 +110,38 @@ body {
   text-decoration: none;
 }
 
-.modal h1 {
+.modal-title {
   margin-top: 0;
+  font-family: 'Alegreya Sans SC', sans-serif;
   text-transform: capitalize;
+  font-weight: 400;
   font-size: 30px;
 }
 
-.modal p {
+.modal-text {
   margin-bottom: 0;
   font-size: 15px;
+  font-family: 'Mulish', sans-serif;
 }
 
 .modal-image {
   display: block;
   margin: 50px auto;
+}
+
+.footer {
+  background: #e9e9e9;
+  display: block;
+  height: 20px;
+  width: 100%;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 750px) {
+  .modal {
+    width: 100%;
+  }
+  .button {
+    width: 95%;
+  }
 }

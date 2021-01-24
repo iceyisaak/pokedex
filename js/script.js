@@ -80,7 +80,7 @@ let pokemonRepository = (() => {
     button.innerText = `${index + 1}. ${pokemon.name}`;
 
     // Apply the styling
-    button.classList.add('button', 'list', 'mb-3');
+    button.classList.add('button', 'list');
     button.setAttribute('id', 'show-modal');
 
     // Append the list
@@ -112,10 +112,12 @@ let pokemonRepository = (() => {
 
     // Add Modal Title
     let modalTitle = document.createElement('h1');
+    modalTitle.classList.add('modal-title');
     modalTitle.innerText = `${pokemon.name}`;
 
     // Add Modal Text
     let modalText = document.createElement('p');
+    modalText.classList.add('modal-text');
     modalText.innerText = `Height: ${pokemon.height / 10} m`;
 
     // Add Modal Image
@@ -145,8 +147,11 @@ let pokemonRepository = (() => {
       .then(() => {
         // log the pokemon details
         // console.log(pokemon);
+
+        // Why must this line be called twice?
         showModal(pokemon);
 
+        // Show modal of pokemon details when the button is clicked
         document.querySelector('#show-modal').addEventListener('click', () => {
           showModal(pokemon);
         });
@@ -212,24 +217,23 @@ let pokemonRepository = (() => {
     });
   }
 
-
+  // Hide Modal
   function hideModal() {
-    let modalContainer = document.querySelector('#modal-container');
+    // let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.remove('is-visible');
   }
 
-
+  // Hide Modal when Esc is pressed
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();
     }
   });
 
+  // Hide Modal when clicking outside modal
   modalContainer.addEventListener('click', (e) => {
-    // Since this is also triggered when clicking INSIDE the modal container,
-    // We only want to close if the user clicks directly on the overlay
-    let target = e.target;
-    if (target === modalContainer) {
+
+    if (e.target === modalContainer) {
       hideModal();
     }
   });
@@ -248,6 +252,7 @@ let pokemonRepository = (() => {
 
 })();
 
+
 // Fetch data from API
 pokemonRepository.loadList().then(() => {
 
@@ -259,9 +264,5 @@ pokemonRepository.loadList().then(() => {
 
   });
 });
-
-
-
-
 
 
