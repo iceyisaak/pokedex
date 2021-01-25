@@ -111,15 +111,8 @@ let pokemonRepository = (() => {
     // load pokemon details
     loadDetails(pokemon)
       .then(() => {
-        // log the pokemon details
-
-        // Why must this line be called twice?
+        // show pokemon details in a modal
         showModal(pokemon);
-
-        // Show modal of pokemon details when the button is clicked
-        document.querySelector('#show-modal').addEventListener('click', () => {
-          showModal(pokemon);
-        });
       });
   }
 
