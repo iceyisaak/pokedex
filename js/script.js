@@ -6,40 +6,6 @@ let pokemonRepository = (() => {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 
-  // Testing Data Object
-  // let pokemonList = [
-  //   {
-  //     name: 'Bulbasaur',
-  //     height: 0.7,
-  //     types: [
-  //       'grass',
-  //       'poison'
-  //     ]
-  //   },
-  //   {
-  //     name: 'Squirtle',
-  //     height: 0.5,
-  //     types: [
-  //       'water'
-  //     ]
-  //   },
-  //   {
-  //     name: 'Pikachu',
-  //     height: 0.4,
-  //     types: [
-  //       'electric'
-  //     ]
-  //   },
-  //   {
-  //     name: 'Kangaskhan',
-  //     height: 2.2,
-  //     types: [
-  //       'normal'
-  //     ]
-  //   }
-  // ];
-
-
   // Get all pokemons in the list
   function getAll() {
     return pokemonList;
@@ -146,7 +112,6 @@ let pokemonRepository = (() => {
     loadDetails(pokemon)
       .then(() => {
         // log the pokemon details
-        // console.log(pokemon);
 
         // Why must this line be called twice?
         showModal(pokemon);
