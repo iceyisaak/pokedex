@@ -17,25 +17,27 @@
 </head>
 
 <body>
-  <header class="header">
-    <h1 class="heading__primary--main">
-      Pokedex
-    </h1>
-  </header>
-  <main class="main">
+
+  <nav class="navbar navbar-expand-lg fixed-top p-3 mb-2 bg-warning text-dark">
+    <div class="container">
+      <h3 class="navbar-brand heading__primary--main">Pokedex</h3>
+    </div>
+  </nav>
+
+  <main class="main container mt-12 mb-5">
     <div id="list">
       <ul class="pokemon-list list-group">
       </ul>
     </div>
     <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="modal-title"
       aria-hidden="true">
-      <div class="modal-dialog modal-dialog-center" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="modal-title">
               Modal Title
             </h3>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <button class="close px-4 py-4" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
