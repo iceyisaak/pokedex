@@ -76,32 +76,14 @@ let pokemonRepository = (() => {
 
     let elName = `<h1>${pokemon.name}</h1>`;
 
-    let imgFront = document.createElement('img');
-    imgFront.classList.add('model-img');
-    imgFront.setAttribute('style', 'width:50%');
-    imgFront.src = pokemon.imageUrlFront;
-
-    let imgBack = document.createElement('img');
-    imgBack.classList.add('model-img');
-    imgBack.setAttribute('style', 'width:50%');
-    imgBack.src = pokemon.imageUrlBack;
-
-    // `<img class="modal-img" src="${pokemon.imageUrlFront}" style="width:50%"/>`;
-    // imgFront.setAttribute("src", pokemon.imageUrlFront);
-    // let imgBack = `<img class="modal-img" src="${pokemon.imageUrlBack}" style="width:50%"/>`;
-    // imgBack.setAttribute("src", pokemon.imageUrlBack);
+    let elImage = `<img class="modal-img" src="${pokemon.imageUrl}" style="width:50%"/>`;
     let elHeight = `<p>Height: ${pokemon.height}</p>`;
-    let elWeight = `<p>Weight: ${pokemon.weight}</p>`;
     let elTypes = `<p>Types: ${pokemon.types}</p>`;
-    let elAbilities = `<p>Abilities: ${pokemon.abilities}</p>`;
 
     modalTitle.innerHTML = elName;
-    modalBody.appendChild(imgFront);
-    modalBody.appendChild(imgBack);
-    modalBody.appendChild(elHeight);
-    modalBody.appendChild(elWeight);
-    modalBody.appendChild(elTypes);
-    modalBody.appendChild(elAbilities);
+    modalBody.innerHTML = elImage;
+    modalBody.innerHTML = elHeight;
+    modalBody.innerHTML = elTypes;
 
     // // Clear all existing modal content
     // modalContainer.innerHTML = '';
