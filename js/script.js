@@ -28,6 +28,7 @@ let pokemonRepository = (() => {
 
 
 
+
   // Add item to list
   function addListItem(pokemon, index) {
 
